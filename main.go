@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/iamtonmoy0/discord-bot/config"
+)
 
 func main() {
 	err := config.ReadConfig()
@@ -9,6 +13,7 @@ func main() {
 		return
 	}
 	bot.start()
+
 	<-make(chan struct{})
 	return
 }
