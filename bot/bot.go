@@ -2,6 +2,7 @@ package bot
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/bwmarrin/discordgo"
 	"github.com/iamtonmoy0/discord-bot/config"
@@ -37,7 +38,11 @@ func messageHandler(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 	// starter
 	if m.Content == "ping" {
-		s.ChannelMessageSend(m.ChannelID, "hello")
+		_, _ = s.ChannelMessageSend(m.ChannelID, "hello")
+	}
+	var time = time.Now()
+	if m.Content == "time" {
+		_, _ = s.ChannelMessageSend(m.ChannelID, time.String())
 	}
 
 }
