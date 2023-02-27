@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/iamtonmoy0/discord-bot/bot"
 	"github.com/iamtonmoy0/discord-bot/config"
 )
 
@@ -12,7 +13,7 @@ func main() {
 		fmt.Println(err.Error())
 		return
 	}
-	bot.start()
+	bot.Start()
 
 	<-make(chan struct{})
 	return

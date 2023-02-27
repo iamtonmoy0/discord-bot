@@ -10,8 +10,8 @@ import (
 var BotID string
 var goBot *discordgo.Session
 
-func start() {
-	goBot, err := discordgo.new("Bot" + config.Token)
+func Start() {
+	goBot, err := discordgo.New("Bot " + config.Token)
 	if err != nil {
 		fmt.Println(err.Error())
 		return
